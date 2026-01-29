@@ -13,13 +13,13 @@ st.markdown("---")
 # Load the trained model
 @st.cache_resource
 def load_model():
-    model = joblib.load("C:/Users/arnip/OneDrive/Desktop/logistic regression/logistic regression/logistic_model.pkl")
+    model = joblib.load("logistic_model.pkl")
     return model
 
 # Load the dataset to get feature names
 @st.cache_resource
 def load_data():
-    df = pd.read_csv("C:/Users/arnip/OneDrive/Documents/heart.csv.xls")
+    df = pd.read_csv("heart.csv.xls")
     return df
 
 try:
@@ -114,7 +114,8 @@ try:
 
 except FileNotFoundError as e:
     st.error(f"❌ Error: {e}")
-    st.info("Make sure the model file is saved at: C:/Users/arnip/OneDrive/Desktop/logistic regression/logistic regression/logistic_model.pkl")
+    st.info("Make sure the model file is saved at: logistic_model.pkl")
 except Exception as e:
     st.error(f"❌ An error occurred: {e}")
+
     st.info("Please check your inputs and try again.")
