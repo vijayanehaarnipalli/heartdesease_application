@@ -19,7 +19,7 @@ def load_model():
 # Load the dataset to get feature names
 @st.cache_resource
 def load_data():
-    df = pd.read_csv("heart.csv.xls")
+    df = pd.read_csv("heart.csv")
     return df
 
 try:
@@ -119,3 +119,4 @@ except Exception as e:
     st.error(f"❌ An error occurred: {e}")
 
     st.info("Please check your inputs and try again.")
+
